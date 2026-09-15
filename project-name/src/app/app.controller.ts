@@ -1,7 +1,7 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service.js';
 
-@Controller()
+@Controller() // Root endpoint: http://localhost:3000/
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
