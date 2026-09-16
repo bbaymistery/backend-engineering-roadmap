@@ -22,7 +22,7 @@
     },
     "editor.inlineSuggest.suppressSuggestions": true,
     "editor.wordBasedSuggestions": "off",
-    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.ignoreTrimWhitespace": true,
     "diffEditor.hideUnchangedRegions.enabled": true,
     "breadcrumbs.enabled": false,
     "editor.unicodeHighlight.ambiguousCharacters": false,

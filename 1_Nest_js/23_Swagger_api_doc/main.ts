@@ -1,6 +1,7 @@
+// 📄 23_Swagger_api_doc/main.ts - Main Setup for Swagger
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { AppModule } from './app/app.module.js';
+import { AppModule } from './app.module';
 
 async function bootstrap() {
   const port = process.env.PORT ?? 3000;
@@ -16,7 +17,7 @@ async function bootstrap() {
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('api', app, document); // 📍 http://localhost:3000/api ünvanında açılacaq!
+  SwaggerModule.setup('api', app, document); // 📍 http://localhost:3000/api unvanında açılacaq!
 
   await app.listen(port);
   console.log(`🚀 Server uğurla başladı: http://localhost:${port}`);

@@ -1,10 +1,11 @@
+// 📄 23_Swagger_api_doc/user.controller.ts - Controller with Swagger Decorators
 import { Controller, Get, Post, Body, Param, ParseIntPipe } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse, ApiParam } from '@nestjs/swagger';
-import { UserService } from './user.service.js';
-import { CreateUserDto } from './dto/create-user.dto.js';
+import { UserService } from './user.service';
+import { CreateUserDto } from './create-user.dto';
 
 @ApiTags('users') // Swagger UI səhifəsində 'users' başlığı altında qruplaşdırır
-@Controller('users') // Endpoint: http://localhost:3000/users
+@Controller('users')
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
