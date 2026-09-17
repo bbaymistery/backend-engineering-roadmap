@@ -27,6 +27,36 @@ this.prisma.user.findMany({ where: { age: 18 } }); // Prisma
 ```
 Tərcüməçi (ORM) bunu arxa planda avtomatik Çincəyə (SQL-ə) çevirir və bazaya göndərir. Yəni sən SQL xətası etmədən və dırnaq içində mürəkkəb kodlar yazmadan baza ilə rahat danışırsan!
 
+> [!TIP]
+> **Praktik Xülasə (Prisma İlə Nələr Edirsən?):**
+> Sən NestJS proyektini yazırsan, kompyuterində PostgreSQL/MySQL (SQL Database) var. Prisma-nı yükləyirsən, o bazaya qoşulur və sən bir dənə də olsun çətin SQL sorğusu yazmadan Prisma-nın metodları ilə bütün CRUD əməliyyatlarını rahatca edirsən:
+> 
+> 1. **Yaratmaq (CREATE / INSERT INTO):**
+>    ```typescript
+>    await this.prisma.user.create({
+>      data: { name: 'Əli', email: 'ali@gmail.com' }
+>    });
+>    ```
+> 2. **Oxumaq / Seçmək (READ / SELECT * FROM):**
+>    ```typescript
+>    await this.prisma.user.findMany(); // Bütün istifadəçiləri gətir
+>    await this.prisma.user.findUnique({ where: { id: 1 } }); // İD-si 1 olanı gətir
+>    ```
+> 3. **Yeniləmək (UPDATE):**
+>    ```typescript
+>    await this.prisma.user.update({
+>      where: { id: 1 },
+>      data: { name: 'Əli Məmmədov' }
+>    });
+>    ```
+> 4. **Silmək (DELETE):**
+>    ```typescript
+>    await this.prisma.user.delete({
+>      where: { id: 1 }
+>    });
+>    ```
+> ORM (Prisma) məhz bunun üçün var — sənə SQL-i unutdurub bütün verilənlər bazası işlərini 1 sətirlik JavaScript/TypeScript metodları ilə gördürmək üçün!
+
 ---
 
 ## 🏎️ 2. Prisma Nədir? TypeORM vs Prisma Müqayisəsi
