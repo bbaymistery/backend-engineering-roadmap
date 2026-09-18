@@ -1,0 +1,3 @@
+bu bizim project-name projemizdir burda biz swaggeri ,guardsi middleware ve sair anlattik  
+http://localhost:3000/api  >swagger
+http://localhost:3000  >project
