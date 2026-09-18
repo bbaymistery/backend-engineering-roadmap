@@ -1,7 +1,8 @@
-import { Module, NestModule, MiddlewareConsumer } from "@nestjs/common"
-import { ConfigModule } from "@nestjs/config"
+import { Module, NestModule, MiddlewareConsumer } from "@nestjs/common";
+import { ConfigModule } from "@nestjs/config";
 import { EventEmitterModule } from "@nestjs/event-emitter";
-import { APP_GUARD, APP_FILTER, APP_INTERCEPTOR } from "@nestjs/core";
+import { APP_GUARD, APP_INTERCEPTOR, APP_FILTER } from "@nestjs/core";
+
 
 @Module({
     imports: [
@@ -14,8 +15,7 @@ import { APP_GUARD, APP_FILTER, APP_INTERCEPTOR } from "@nestjs/core";
         //modules
         AuthModule,
         AuthorModule,
-        BlogModule,
-        CommentModule,
+
     ],
     providers: [
         {
@@ -24,19 +24,16 @@ import { APP_GUARD, APP_FILTER, APP_INTERCEPTOR } from "@nestjs/core";
         },
         {
             provide: APP_FILTER,
-            useClass: HttpExceptionFilter
-        },
-        {
-            provide: APP_INTERCEPTOR,
-            useClass: TransformInterceptor,
+            useClass: HttpExceptionFilter,
         },
         {
             provide: APP_INTERCEPTOR,
             useClass: LoggingInterceptor,
         },
-
+        {
+            provide: APP_INTERCEPTOR,
+            useClass: TransformInterceptor,
+        },
     ],
-
 })
-
 export class AppModule { }
