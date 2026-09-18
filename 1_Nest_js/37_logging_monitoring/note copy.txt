@@ -1,0 +1,5 @@
+resimlerde in ntegratiion da var ama bence cok onemli olmamali cunki gher birinin dokumantasyonundan 
+bakarak yaza bilecegimiz bir sey
+Bana bunlari anlatirken avantajlarini deazavantjlarini falan ne ise yarafdigini falan anlat 
+cunki dedigim gibi integrationi cok zor olmamali bunlarin ne oldugunu bilmeliyim diye dusunuyorum
+Eger yanlis dusunuyorsam integration onemli oldugunu bildigin yerlerde anlata bilirsin
