@@ -1,0 +1,7 @@
+packages:
+  # All packages in direct subdirs of apps/
+  - 'apps/*'
+  # All shared packages in packages/
+  - 'packages/*'
+  # Exclude test directories
+  - '!**/test/**'

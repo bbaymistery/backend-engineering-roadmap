@@ -1,0 +1,5 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "🐶 Husky: Verifying Commit Message Format with Commitlint..."
+npx --no -- commitlint --edit "${1}"

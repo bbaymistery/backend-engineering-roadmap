@@ -1,3 +1,6 @@
 Tutorial 1den 50e geder fundamentalsi barindirdigi ucun
 @course_1-50 seklinde olari ayri bir yere atdim
 51den seksen neceye geder ise fergli ornekler olacagi ucun onlari fundamentalsdan ayirdim (advance topics)
+
+
+50den o terefe advanced dir

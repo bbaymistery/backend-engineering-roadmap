@@ -1,0 +1,30 @@
+{
+  "name": "nestjs-course-nx-pnpm",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Scalable NestJS Monorepo with Nx Tooling, PNPM Workspaces, and Husky Git Hooks",
+  "author": "Engineering Roadmap",
+  "license": "MIT",
+  "scripts": {
+    "build-all": "pnpm run --parallel -r build",
+    "prepare": "husky install",
+    "start:auth": "nest start --watch apps/nestjs-advance-auth-app-02",
+    "start:dto": "nest start --watch apps/nestjs-advance-dto-01",
+    "lint": "eslint \"{apps,packages}/**/*.ts\" --fix",
+    "format": "prettier --write \"{apps,packages}/**/*.ts\""
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.0.1",
+    "@commitlint/config-conventional": "^16.0.0",
+    "@nestjs/cli": "^10.0.0",
+    "@nestjs/common": "^10.0.0",
+    "@nestjs/core": "^10.0.0",
+    "@nestjs/platform-express": "^10.0.0",
+    "husky": "^8.0.3",
+    "nx": "^17.0.0",
+    "prettier": "^3.0.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.1",
+    "typescript": "^5.1.3"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "nestjs-advance-auth-app-02",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc",
+    "start": "nest start"
+  }
+}
