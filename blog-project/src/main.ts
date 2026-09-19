@@ -1,43 +1,25 @@
-import { NestFactory } from "@nestjs/core";
-import { ValidationPipe, Logger } from "@nestjs/common"
-import { SwaggerModule, DocumentBuilder } from "@nestjs/swagger";
-import { AppModule } from "./app.module";
-
+import { NestFactory } from '@nestjs/core';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { AppModule } from './app/app.module.js';
 
 async function bootstrap() {
+  const port = process.env.PORT ?? 3000;
+  const app = await NestFactory.create(AppModule);
 
-    const app = await NestFactory.create(AppModule);
-    const logger = new Logger("Bootstrap");
+  // 📄 Swagger OpenAPI Konfiqurasiyası
+  const config = new DocumentBuilder()
+    .setTitle('NestJS Tədris Layihəsi API')
+    .setDescription('Swagger OpenAPI ilə avtomatik generasiya olunmuş interaktiv API Sənədləşməsi')
+    .setVersion('1.0')
+    .addTag('users', 'İstifadəçi Əməliyyatları')
+    .addBearerAuth()
+    .build();
 
-    //Global Validation Pipe
-    app.useGlobalPipes(new ValidationPipe({
-        whitelist: true,
-        forbidNonWhitelisted: true,
-        transform: true,
-        transformOptions: { enableImplicitConversion: true },
-    }));
+  const document = SwaggerModule.createDocument(app, config);
+  SwaggerModule.setup('api', app, document); // 📍 http://localhost:3000/api ünvanında açılacaq!
 
-    //Swagger Setup
-    const config = new DocumentBuilder()
-        .setTitle('Blog APi')
-        .setDescription('Nest js Blog api All Fundamentals Demo')
-        .setVersion('1.0')
-        .addBearerAuth()
-        .addTag('Auth', 'Authentication')
-        .addTag('Authors', 'Aythor management')
-        .addTag('Blog', 'Blogs Post Management')
-        .addTag('Comments', 'Comments CRUD Operations')
-        .build();
-    const document = SwaggerModule.createDocument(app, config);
-    SwaggerModule.setup('api', app, document);
-
-    const PORT = process.env.PORT || 3000;
-    app.listen(PORT, () => {
-        logger.log(`Application is running on: http://localhost:${PORT}`);
-        // our swagger documentation url
-        logger.log(`Swagger documentation url: http://localhost:${PORT}/api`);
-    })
-
+  await app.listen(port);
+  console.log(`🚀 Server uğurla başladı: http://localhost:${port}`);
+  console.log(`📚 Swagger API Sənədləşməsi: http://localhost:${port}/api`);
 }
-
 bootstrap();
