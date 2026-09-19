@@ -81,7 +81,53 @@ Biz sənə **`1_Nest_js/51_monorepo`** daxilində **tam işlək NestJS Monorepo 
 
 ---
 
-## 🎯 5. Qızıl Xülasə
+## 💻 5. Bu Monorepo Layihəsini Sıfırdan Qurarkən Terminala Verilən Bütün Əmrlər
+
+Gələcəkdə özün sıfırdan belə bir Monorepo sistemi qurmaq istəsən, terminalda addım-addım bu əmrləri vurmalısan:
+
+### 1️⃣ İlk NestJS Proyektini Yaratmaq:
+```bash
+npx @nestjs/cli new nestjs-monorepo
+cd nestjs-monorepo
+```
+
+### 2️⃣ 2-ci Tətbiqi Yaratmaq (Monorepo Rejiminə Keçid):
+```bash
+nest generate app user-app
+# (Və ya qısaca: nest g app user-app)
+```
+*💡 Qeyd: Nest CLI soruşacaq: "Monorepo struktura keçək?" -> `Yes` basırsan. Avtomatik `apps/` qovluğunu düzəldir!*
+
+### 3️⃣ Ortak Kitabxana (Shared Library) Yaratmaq:
+```bash
+nest generate library external
+# (Və ya qısaca: nest g lib external)
+```
+*💡 Qeyd: Bu əmr avtomatik `libs/external` yaradır və `tsconfig.json`-a `@app/external` alias-nı əlavə edir.*
+
+### 4️⃣ Eyni Anda İşlətmək Üçün `concurrently` Paketini Yükləmək:
+```bash
+npm install -D concurrently
+```
+
+### 5️⃣ Proyektləri İşə Salmaq və Build Etmək Əmrləri:
+```bash
+# 🔑 Yalnız Auth App-i işlətmək (Port 3001):
+npm run start:dev-auth
+
+# 👤 Yalnız User App-i işlətmək (Port 3002):
+npm run start:dev-user
+
+# 🚀 HƏR İKİ microservice-i eyni terminalda eyni anda işlətmək:
+npm run start:dev-all
+
+# 🏗️ Bütün tətbiqləri Production üçün build etmək:
+npm run build
+```
+
+---
+
+## 🎯 6. Qızıl Xülasə
 
 1. **Monorepo** = Çoxlu tətbiqlər (`apps/`) + Ortak Kitabxanalar (`libs/`) + Tək `node_modules`.
 2. **`libs/`** daxilindəki kodları `npm publish` etmədən `@app/lib-name` adı ilə istifadə edə bilərsən.
