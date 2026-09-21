@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  # 🐘 PostgreSQL Verilənlər Bazası Servisi
+  postgres-db:
+    image: postgres:15-alpine
+    container_name: nestjs_postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: nest_user
+      POSTGRES_PASSWORD: nest_password
+      POSTGRES_DB: nest_database
+    ports:
+      - "5432:5432" # Host port : Container port
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # Data-nın itməməsi üçün fiziki volume
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nest_user -d nest_database"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
