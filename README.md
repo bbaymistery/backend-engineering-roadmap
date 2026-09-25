@@ -35,6 +35,29 @@ npm run dev
 
 ---
 
+## 🗺️ Backend Roadmap & Projects Structure
+
+```text
+backend-roadmap/
+├── README.md
+├── phase-01-nestjs/
+├── phase-02-postgresql/
+├── phase-03-prisma/
+├── phase-04-authentication/
+├── phase-05-redis/
+├── phase-06-docker/
+├── phase-07-aws/
+├── phase-08-testing/
+├── phase-09-system-design/
+├── phase-10-message-queue/
+├── phase-11-ai-integration/
+└── projects/
+    ├── enterprise-auth-api/
+    ├── booking-management-api/
+    └── smart-parking-api/
+```
+---
+
 ## 📚 Təşəkkür Və İstinad (Reference & Credit)
 
 Bu layihə **[bbaymistery/backend-engineering-roadmap](https://github.com/bbaymistery/backend-roadmap-enginering)** kursundan və yol xəritəsindən ilhamlanaraq təcrübə məqsədilə hazırlanmışdır.
