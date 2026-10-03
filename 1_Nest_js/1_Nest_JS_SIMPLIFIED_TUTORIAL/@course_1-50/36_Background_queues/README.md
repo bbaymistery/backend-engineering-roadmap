@@ -52,11 +52,11 @@ Backend istifadəçini bazaya yazan kimi **0.01 saniyəyə** `201 Created` cavab
 
 Bir çox proqramçı bu ikisini qarışdırır. Gəl aralarındakı fərqə baxaq:
 
-| Xüsusiyyət | BullMQ / Bull (Job Queues) | Cron Jobs (`@nestjs/schedule`) |
-| :--- | :--- | :--- |
-| **Nə vaxt işə düşür?** | Hadisə (Event) baş verən an dinamik olaraq növbəyə atılır. | Əvvəlcədən təyin olunmuş **dəqiq vaxtda/cədvəldə** (Məsələn: Hər gecə saat 00:00-da). |
-| **İstifadə Sahələri** | Qeydiyyat emaili, Fayl çevrilməsi (PDF/Video), Webhook təkrar cəhdləri. | Gündəlik balans hesabatı hazırlamaq, Hər saat bazanın backup-ını almaq, Müddəti bitmiş abunəlikləri ləğv etmək. |
-| **Server Restart Olsa?** | Məlumat Redis-də olduğu üçün **İTMİR**, qaldığı yerdən davam edir. | Yaddaşda (RAM) olduğu üçün həmin an nəzərdə tutulan iş **ÖTÜRÜLƏ BİLƏR**. |
+| Xüsusiyyət               | BullMQ / Bull (Job Queues)                                              | Cron Jobs (`@nestjs/schedule`)                                                                                  |
+| :----------------------- | :---------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------- |
+| **Nə vaxt işə düşür?**   | Hadisə (Event) baş verən an dinamik olaraq növbəyə atılır.              | Əvvəlcədən təyin olunmuş **dəqiq vaxtda/cədvəldə** (Məsələn: Hər gecə saat 00:00-da).                           |
+| **İstifadə Sahələri**    | Qeydiyyat emaili, Fayl çevrilməsi (PDF/Video), Webhook təkrar cəhdləri. | Gündəlik balans hesabatı hazırlamaq, Hər saat bazanın backup-ını almaq, Müddəti bitmiş abunəlikləri ləğv etmək. |
+| **Server Restart Olsa?** | Məlumat Redis-də olduğu üçün **İTMİR**, qaldığı yerdən davam edir.      | Yaddaşda (RAM) olduğu üçün həmin an nəzərdə tutulan iş **ÖTÜRÜLƏ BİLƏR**.                                       |
 
 ---
 

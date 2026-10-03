@@ -71,7 +71,7 @@ export class StripeService implements PaymentGateway {
     },
   ],
 })
-export class AppModule {}
+export class AppModule { }
 
 // 4. Servislərin İstifadə Olunduğu Yer (Consumer)
 @Injectable()
@@ -81,7 +81,7 @@ export class OrderService {
     @Inject('DATABASE_CONFIG') private readonly dbConfig: any,
     @Inject(PAYMENT_GATEWAY_TOKEN) private readonly paymentGateway: PaymentGateway,
     @Inject('CONNECTION_STRING') private readonly connectionString: string,
-  ) {}
+  ) { }
 
   processOrder() {
     this.logger.log(`DB Qoşulması: ${this.connectionString}`);

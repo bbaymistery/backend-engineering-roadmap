@@ -31,11 +31,11 @@ Məhz **RabbitMQ, Kafka və Redis** həmin O Sifariş Lövhəsidir!
 
 ## 🆚 3. Redis, RabbitMQ və Kafka Fərqi Nədir?
 
-| Broker | Nədir? | Həyati Analogiya | Ən Yaxşı İstifadə Sahəsi | NestJS Transport |
-| :--- | :--- | :--- | :--- | :--- |
-| **RabbitMQ** | Ən etibarlı növbə (Queue) brokeridir. | **Etibarlı Poçtalyon** (Mesajı alana qədər zərfidə saxlayır). | Ödənişlərin emalı, Email/SMS göndərişi, Növbəli işlər. | `Transport.RMQ` |
-| **Kafka** | Yüksək sürətli Data/Stream sistemidir. | **Böyük Tır Karvanı** (Saniyədə milyonlarla datanı axınla aparır). | Big Data, Log toplama, Uber-də canlı GPS izləmə, Kliklərin izlənməsi. | `Transport.KAFKA` |
-| **Redis** | Ultran-sürətli yaddaş (RAM) bazasıdır. | **Göz Qabağındakı Qeyd Dəftəri** | Keşləmə (Caching), Pub/Sub, Anlıq bildirişlər (BullMQ). | `Transport.REDIS` |
+| Broker       | Nədir?                                 | Həyati Analogiya                                                   | Ən Yaxşı İstifadə Sahəsi                                              | NestJS Transport  |
+| :----------- | :------------------------------------- | :----------------------------------------------------------------- | :-------------------------------------------------------------------- | :---------------- |
+| **RabbitMQ** | Ən etibarlı növbə (Queue) brokeridir.  | **Etibarlı Poçtalyon** (Mesajı alana qədər zərfidə saxlayır).      | Ödənişlərin emalı, Email/SMS göndərişi, Növbəli işlər.                | `Transport.RMQ`   |
+| **Kafka**    | Yüksək sürətli Data/Stream sistemidir. | **Böyük Tır Karvanı** (Saniyədə milyonlarla datanı axınla aparır). | Big Data, Log toplama, Uber-də canlı GPS izləmə, Kliklərin izlənməsi. | `Transport.KAFKA` |
+| **Redis**    | Ultran-sürətli yaddaş (RAM) bazasıdır. | **Göz Qabağındakı Qeyd Dəftəri**                                   | Keşləmə (Caching), Pub/Sub, Anlıq bildirişlər (BullMQ).               | `Transport.REDIS` |
 
 ---
 

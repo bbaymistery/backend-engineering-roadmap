@@ -15,7 +15,7 @@ import { CreateTaskDto } from './create-task.dto';
 @Controller('tasks') // 📍 Bütün bu marşrutlar (routes) '/tasks' ilə başlayacaq
 export class TaskController {
   // Dependency Injection vasitəsilə TaskService-i inject edirik
-  constructor(private readonly taskService: TaskService) {}
+  constructor(private readonly taskService: TaskService) { }
 
   // 1. GET /tasks - Bütün tapşırıqları almaq
   @Get()
